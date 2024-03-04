@@ -25,8 +25,10 @@ header {
 }
 
 #user-avatar {
+    display: inline-block;
     height: 100%;
     width: 37.5px;
+    border-radius: 50%;
 }
 .avatar {
     display: inline-block;
