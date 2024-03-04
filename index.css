@@ -26,7 +26,7 @@ header {
 
 .avatar {
     display: inline-block;
-    height: 100%;
+    height: 37.5px;
     width: 37.5px;
     border-radius: 50%;
     margin-right: 30px;
