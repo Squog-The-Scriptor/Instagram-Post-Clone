@@ -39,7 +39,7 @@ function createImg() {
     let img = document.createElement("img")
     img.setAttribute("src", posts[0].post)
     postImageEl.appendChild(img)
-    
+    img.setAttribute("id","post-img");
     img.classList.add("post")
 }
 
@@ -173,7 +173,47 @@ hoverIconShare()
 
 const heartBtn = document.getElementById("heart")
 const likeValue = document.getElementById("like")
+const postImg = document.getElementById("like")
 let clickCount = 0
+
+postImg.addEventListener("click", function(){ 
+    
+    let likeCount = posts[0].likes;
+    
+    likeCount +=1
+    clickCount +=1
+    
+    likeValue.innerHTML = `<span id="likes">${likeCount} likes</span>`
+    console.log(likeCount)
+    console.log(clickCount)
+    
+    clickImg()
+    
+    function clickImg() {
+      heartBtn.src = "images/icon-heart-filled.png"
+    }
+    
+    postImg.onmouseout = mouseOut
+    
+    function mouseOut() { 
+      heartBtn.src = "images/icon-heart-filled.png"
+    }
+    
+    if (clickCount % 2 == 0) {
+      heartBtn.src = "images/icon-heart.png"
+      heartBtn.onmouseout = mouseOut
+    
+      function mouseOut() { 
+        heartBtn.src = "images/icon-heart.png"
+      }
+      
+      likeCount -=1
+      likeValue.innerHTML = `<span id="likes">${likeCount} likes</span>`
+    }
+    
+    
+    
+})
 
 heartBtn.addEventListener("click", function(){ 
     
