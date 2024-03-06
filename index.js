@@ -39,7 +39,7 @@ function createImg() {
     let img = document.createElement("img")
     img.setAttribute("src", posts[0].post)
     postImageEl.appendChild(img)
-    img.setAttribute("id","post-img");
+    img.setAttribute("id","postImg");
     img.classList.add("post")
 }
 
@@ -173,7 +173,7 @@ hoverIconShare()
 
 const heartBtn = document.getElementById("heart")
 const likeValue = document.getElementById("like")
-const postImg = document.getElementById("like")
+const postImg = document.getElementById("postImg")
 let clickCount = 0
 
 postImg.addEventListener("click", function(){ 
